@@ -6,10 +6,10 @@ window.onload = async () => {
     let code = localStorage.getItem('code');
     if (!code)
         code = urlsch.get('code');
-    if (!code)
+    if (code) {
+        if (state) {
+        }
+    }
+    else
         window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
-    else {
-    }
-    if (state) {
-    }
 };
