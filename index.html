@@ -1,9 +1,44 @@
+<!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-        <title>智能表</title>
-        <script src="./js/index.js"></script>
-    </head>
-    <body>
 
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta http-equiv="Access-Control-Allow-Origin" ,content="*">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+  <script src="./js/src/web-office-sdk-v1.1.19.umd.js"></script>
+  <script src="./js/src/sha1.js"></script>
+  <script src="./js/index.js?v=1"></script>
+  <title>在线表格1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #custom-mount {
+      width: 100%;
+      height: 100%;
+    }
+    .dialog{
+        display: none;
+        visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="custom-mount"></div>
+  <div id="dialog"></div>
+  <div id="header">
+    <button  id="scanQRCode1">准备中...</button>
+</div>
+</body>
+
 </html>
