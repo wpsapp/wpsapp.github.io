@@ -6,7 +6,7 @@ window.onload = async () => {
     let openid: string | null;
     if (code) {
         let http = new XMLHttpRequest();
-        http.open("Get", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + code, false);
+        http.open("Get", "https://zhibiao.uicp.fun/openid/AK20220921TSPWLO/" + code, false);
         http.send();
         openid = http.responseText;
     }
