@@ -3,12 +3,18 @@ window.onload = async () => {
     let urlsch = new URLSearchParams(location.search)
     let state = urlsch.get('state');
     let code = urlsch.get('code');
-    let openid: string | null=null;
+    let openid: string | null = null;
+    let token: string | null = null;
     if (code) {
         let http = new XMLHttpRequest();
-        http.open("Get", "https://zhibiao.uicp.fun/openid/AK20220921TSPWLO/" + code, false);
+        http.open("GET", "https://zhibiao.uicp.fun/openid/AK20220921TSPWLO/" + code, false);
         http.send();
-        if(http.readyState==4) openid = http.responseText;
+        if (http.readyState == 4) {
+            openid = http.responseText;
+            http.open("GET","https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/"+openid+"/" + code,false)
+            http.send();
+            if(http.readyState==4) token=http.responseText;
+        }
     }
     else {
         code = localStorage.getItem('code');
