@@ -5,7 +5,6 @@ if (state)
     window.onload = async () => {
         let code = urlsch.get('code');
         let openid = null;
-        let token = null;
         if (code) {
             let http = new XMLHttpRequest();
             http.open("GET", "https://zhibiao.uicp.fun/openid/AK20220921TSPWLO/" + code, false);
@@ -14,37 +13,17 @@ if (state)
                 openid = http.responseText;
                 localStorage.setItem("code", code);
                 localStorage.setItem("openid", openid);
-                window.location.href = "https://wpsapp.github.io/" + state;
             }
         }
-        else {
-            code = localStorage.getItem('code');
-            openid = localStorage.getItem('openid');
-            if (code && openid)
-                window.location.href = "https://wpsapp.github.io/" + state;
-            else
-                window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
+        code = localStorage.getItem('code');
+        openid = localStorage.getItem('openid');
+        if (code && openid) {
+            let http = new XMLHttpRequest();
+            http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false);
+            http.send();
+            localStorage.setItem("token", http.responseText);
+            window.location.href = "https://wpsapp.github.io/" + state;
         }
-        /*
-        else {
-            
-        }
-        if (state)
-                if (code && openid) {
-                    let http = new XMLHttpRequest();
-                    http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false)
-                    http.send();
-                    if (http.readyState == 4) {
-                        token = http.responseText;
-                        localStorage.setItem("code", code);
-                        localStorage.setItem("openid", openid);
-                        localStorage.setItem("token", token);
-                        window.location.href = "https://wpsapp.github.io/" + state;
-                    }
-                    else
-                        window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
-                }
-                else
-                    window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
-        */
+        else
+            window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
     };
