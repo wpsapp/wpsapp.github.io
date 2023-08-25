@@ -28,3 +28,4 @@ if (state) window.onload = async () => {
     else
         window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
 }
+
