@@ -1,5 +1,4 @@
 window.onload = async () => {
-
     let urlsch = new URLSearchParams(location.search)
     let state = urlsch.get('state');
     let code = urlsch.get('code');
