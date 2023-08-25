@@ -25,7 +25,7 @@ if (state)
             token = http.responseText;
             localStorage.setItem("token", token);
         }
-        if (token)
+        if (token && token != "")
             window.location.href = "https://wpsapp.github.io/" + state;
         else
             window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
