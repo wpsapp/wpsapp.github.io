@@ -16,16 +16,15 @@ if (state) window.onload = async () => {
     }
     code = localStorage.getItem('code');
     openid = localStorage.getItem('openid');
-    if (code && openid) {
-        let http = new XMLHttpRequest();
-        http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false)
-        http.send();
-        if (http.readyState == 4)
-            localStorage.setItem("token", token = http.responseText);
-    }
-    if (token && token != "")
+    if (code && openid && openid!="") 
         window.location.href = "https://wpsapp.github.io/" + state;
     else
         window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
 }
 
+
+        //let http = new XMLHttpRequest();
+        //http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false)
+        //http.send();
+        //if (http.readyState == 4)
+        //    localStorage.setItem("token", token = http.responseText);
