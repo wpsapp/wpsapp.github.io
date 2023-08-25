@@ -14,10 +14,7 @@ window.onload = async () => {
         code = localStorage.getItem('code');
         openid = localStorage.getItem('openid');
     }
-    if (code && openid) {
-
-    }
-    else
+    if (code && openid)
         window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
 
 
