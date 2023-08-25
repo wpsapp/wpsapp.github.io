@@ -26,8 +26,10 @@ window.onload = async () => {
                 localStorage.setItem("code", code);
                 localStorage.setItem("openid", openid);
                 localStorage.setItem("token", token);
+                window.location.href = "https://wpsapp.github.io/" + state;
             }
-            window.location.href = "https://wpsapp.github.io/" + state;
+            else
+                window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
         }
         else
             window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
