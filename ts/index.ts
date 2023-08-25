@@ -1,7 +1,6 @@
 let urlsch = new URLSearchParams(location.search)
 let state = urlsch.get('state');
 if (state) window.onload = async () => {
-
     let code = urlsch.get('code');
     let openid: string | null = null;
     let token: string | null = null;
@@ -20,8 +19,10 @@ if (state) window.onload = async () => {
     else {
         code = localStorage.getItem('code');
         openid = localStorage.getItem('openid');
-        
-        window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
+        if (code && openid)
+            window.location.href = "https://wpsapp.github.io/" + state;
+        else
+            window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
     }
 
     /*    
