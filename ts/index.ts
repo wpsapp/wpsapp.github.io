@@ -19,18 +19,4 @@ window.onload = async () => {
             window.location.href = "https://wpsapp.github.io/" + state;
         else
             window.location.href = "https://developer.kdocs.cn/h5/auth?app_id=AK20220921TSPWLO&scope=user_basic&redirect_uri=https://wpsapp.github.io/&state=" + state;
-
-
-
-
-
-
-
-
-}
-function token(openid: string, code: string) {
-    let http = new XMLHttpRequest();
-    http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false);
-    http.send();
-    return http.responseText;
 }
