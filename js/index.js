@@ -3,12 +3,13 @@ window.onload = async () => {
     let urlsch = new URLSearchParams(location.search);
     let state = urlsch.get('state');
     let code = urlsch.get('code');
-    let openid;
+    let openid = null;
     if (code) {
         let http = new XMLHttpRequest();
         http.open("Get", "https://zhibiao.uicp.fun/openid/AK20220921TSPWLO/" + code, false);
         http.send();
-        openid = http.responseText;
+        if (http.readyState == 4)
+            openid = http.responseText;
     }
     else {
         code = localStorage.getItem('code');
