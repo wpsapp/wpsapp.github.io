@@ -1,6 +1,5 @@
 let urlsch = new URLSearchParams(location.search)
 let state = urlsch.get('state');
-
 if (state) window.onload = async () => {
     let code = urlsch.get('code');
     let openid: string | null = null;
@@ -21,8 +20,8 @@ if (state) window.onload = async () => {
         let http = new XMLHttpRequest();
         http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false)
         http.send();
-        token = http.responseText;
-        localStorage.setItem("token", token);
+        if (http.readyState == 4)
+            localStorage.setItem("token", token = http.responseText);
     }
     if (token && token != "")
         window.location.href = "https://wpsapp.github.io/" + state;

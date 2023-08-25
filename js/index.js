@@ -22,8 +22,8 @@ if (state)
             let http = new XMLHttpRequest();
             http.open("GET", "https://zhibiao.uicp.fun/edittoken/AK20220921TSPWLO/" + openid + "/" + code, false);
             http.send();
-            token = http.responseText;
-            localStorage.setItem("token", token);
+            if (http.readyState == 4)
+                localStorage.setItem("token", token = http.responseText);
         }
         if (token && token != "")
             window.location.href = "https://wpsapp.github.io/" + state;
