@@ -91,9 +91,9 @@ function GetImage(control) {
         case "btnShowMsg":
             return "images/1.svg"
         case "btnShowDialog":
-            return "images/2.svg"
+            return "images/1.svg"
         case "btnShowTaskPane":
-            return "images/3.svg"
+            return "images/1.svg"
         default:
             ;
     }
