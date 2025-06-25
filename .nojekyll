@@ -1,0 +1,5 @@
+# 在仓库根目录添加.nojekyll文件
+touch .nojekyll
+
+# 添加CORS配置
+echo 'Access-Control-Allow-Origin: *' > _headers
