@@ -16,7 +16,6 @@
   Access-Control-Allow-Origin: https://wps-xxx.com
   Service-Worker-Allowed: /
 /*.*
-  Content-Type: application/javascript; charset=utf-8
   Content-Encoding: identity  # 明确禁用压缩
 
 /*.css
