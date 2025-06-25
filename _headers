@@ -16,6 +16,7 @@
   Access-Control-Allow-Origin: https://wps-xxx.com
   Service-Worker-Allowed: /
 /images/*.svg
+  content-type:image/svg+xml; charset=utf-8
   Content-Encoding: identity  # 明确禁用压缩
 
 /*.css
