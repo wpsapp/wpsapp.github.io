@@ -1,7 +1,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
     <ribbon startFromScratch="false">
         <tabs>
-            <tab id="wpsAddinTab" label="wps加载项示例">
+            <tab id="wpsAddinTab" label="数据中心">
 		<group id="btnDemoGroup" label="group1">
                     <button id="btnShowMsg" label="弹出消息框" onAction="OnAction" getEnabled="OnGetEnabled"  imageMso="FileSave" visible="true" size="large"/>
 		</group>
