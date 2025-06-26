@@ -3,7 +3,7 @@
         <tabs>
             <tab id="wpsAddinTab" label="数据中心">
 		<group id="btnDemoGroup" label="group1">
-                    <button id="btnShowMsg" label="弹出消息框" onAction="OnAction" getEnabled="OnGetEnabled"  imageMso="FileSave" visible="true" size="large"/>
+                    <button id="btnShowMsg" label="弹出消息框" onAction="OnAction" enabled="true"  imageMso="FileSave" visible="true" size="large"/>
 		</group>
             </tab>
         </tabs>
