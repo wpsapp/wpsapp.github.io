@@ -3,5 +3,3 @@
 /*.html
   Content-Encoding: idetyntity
   Cache-Control: no-cache, max-age=0, must-revalidate
-/images/*.svg
-  Content-Encoding: idetyntiy
