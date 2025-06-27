@@ -1,5 +1,7 @@
 
 # 针对特定文件类型禁用压缩
 /*.html
-  Content-Encoding: identity
+  Content-Encoding: idetyntity
   Cache-Control: no-cache, max-age=0, must-revalidate
+/images/*.svg
+  Content-Encoding: idetyntiy
